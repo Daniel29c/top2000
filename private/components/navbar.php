@@ -13,7 +13,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-  <a class="navbar-brand" href="#">Logo</a>
+<img src="img/npo_radio2_top2000_logo.svg" alt="Girl in a jacket" width="100" height="60">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
