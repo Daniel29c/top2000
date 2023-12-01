@@ -28,6 +28,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Programmering</a>
       </li>
+      <li class="nav-item active">
+        <i class="bi bi-person-circle"></i>
+      </li>
     </ul>
   </div>
 </nav>
