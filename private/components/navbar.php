@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+
+  require_once "../private/components/adminnavbar.php";
+?>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +11,7 @@
     <title>Document</title>
     <style>
         .navbar{
-            background-color:  #22282E !important;
+            background-color:  #DA151A !important;
         }
     </style>
 </head>
@@ -28,14 +32,14 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Programmering</a>
       </li>
-      <li class="nav-item active content-end">
+      <li class="nav-item active">
         <i class="bi bi-person-circle"></i>
       </li>
       <li class="nav-item active content-end">
-        <a href="../private/components/adminnavabar.php">Admin</a>
+        <a href="../private/components/adminnavbar.php">Admin</a>
       </li>
     </ul>
   </div>
 </nav>
 </body>
-</html>
+</html> -->
