@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         .navbar{
-            background-color:  #DA151A !important;
+            background-color:  #22282E !important;
         }
     </style>
 </head>
@@ -23,22 +23,10 @@
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Dj</a>
+        <a class="nav-link" href="#">Nieuws</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Nummer/artiest</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Stemmers</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Gebruiker</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Qr scanner</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">PDF</a>
+        <a class="nav-link" href="#">Programmering</a>
       </li>
     </ul>
   </div>
