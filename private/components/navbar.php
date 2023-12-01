@@ -28,8 +28,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Programmering</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active content-end">
         <i class="bi bi-person-circle"></i>
+      </li>
+      <li class="nav-item active content-end">
+        <a href="../private/components/adminnavabar.php">Admin</a>
       </li>
     </ul>
   </div>
