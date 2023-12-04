@@ -36,6 +36,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Programmering</a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Staat ie</a>
+      </li>
       
       <li class="nav-item active">
         <a class="nav-link" href="adminpaginas/nummer_admin.php">Admin</a>
