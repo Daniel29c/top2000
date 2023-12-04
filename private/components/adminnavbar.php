@@ -24,25 +24,25 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="index.php">Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Dj</a>
+        <a class="nav-link" href="dj_admin.php">Dj</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Nummer/artiest</a>
+        <a class="nav-link" href="nummer_artiest_admin.php">Nummer/artiest</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Stemmers</a>
+        <a class="nav-link" href="stemmers_lijst_admin.php">Stemmers</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Gebruiker</a>
+        <a class="nav-link" href="user_admin.php">Gebruiker</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Qr scanner</a>
+        <a class="nav-link" href="qr_scanner_admin.php">Qr scanner</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">PDF</a>
+        <a class="nav-link" href="pdf_admin.php">PDF</a>
       </li>
     </div>
     <ul class="navbar-nav">
