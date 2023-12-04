@@ -45,12 +45,6 @@
         <a class="nav-link" href="pdf_admin.php">PDF</a>
       </li>
     </div>
-    <ul class="navbar-nav">
-  <li class="nav-item active ml-auto">
-    <i class="bi bi-person-circle bi-lg text-white"></i>
-  </li>
-</ul>
-  </div>
 </nav>
 </body>
 </html>

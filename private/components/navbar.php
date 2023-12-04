@@ -1,8 +1,8 @@
 <?php
 
-  require_once "../private/components/adminnavbar.php";
+  //require_once "../private/components/adminnavbar.php";
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,10 @@
     <style>
         .navbar{
             background-color:  #DA151A !important;
+        }
+        .btn{
+          background-color: #DA151A !important;
+          border: none;
         }
     </style>
 </head>
@@ -32,14 +36,19 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Programmering</a>
       </li>
+      
       <li class="nav-item active">
-        <i class="bi bi-person-circle"></i>
+        <a class="btn btn-danger" href="../private/components/adminnavbar.php">Admin</a>
       </li>
-      <li class="nav-item active content-end">
-        <a href="../private/components/adminnavbar.php">Admin</a>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <i class="bi bi-person-circle"></i>
+        </a>
       </li>
     </ul>
   </div>
 </nav>
 </body>
-</html> -->
+</html>
