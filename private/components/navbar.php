@@ -38,7 +38,7 @@
       </li>
       
       <li class="nav-item active">
-        <a class="btn btn-danger" href="../private/components/adminnavbar.php">Admin</a>
+        <a class="nav-link" href="adminpaginas/nummer_admin.php">Admin</a>
       </li>
     </ul>
     <ul class="navbar-nav">

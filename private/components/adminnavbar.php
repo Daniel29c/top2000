@@ -17,20 +17,23 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-  <img src="img/npo_radio2_top2000_logo.svg" alt="Girl in a jacket" width="100" height="60">
+  <img src="../img/npo_radio2_top2000_logo.svg" alt="Girl in a jacket" width="100" height="60">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home</a>
+        <a class="nav-link" href="../index.php">Home</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="dj_admin.php">Dj</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="nummer_artiest_admin.php">Nummer/artiest</a>
+        <a class="nav-link" href="artiest_admin.php">artiest</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="nummer_admin.php">nummer</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="stemmers_lijst_admin.php">Stemmers</a>
