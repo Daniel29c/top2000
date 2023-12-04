@@ -27,9 +27,6 @@
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item active">
         <a class="nav-link" href="#">Dj</a>
       </li>
       <li class="nav-item active">
