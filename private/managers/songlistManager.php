@@ -23,7 +23,7 @@ class songlistManager
         $stmt->bindValue(1, $user_id);
         $stmt->execute();
 
-        return $stmt;
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     //tel de stemmen bij elkaar
@@ -37,6 +37,36 @@ class songlistManager
             ORDER BY song_count DESC;");
         $stmt->execute();
 
-        return $stmt;
+        return $stmt->fetch(PDO::FETCH_OBJ);
+    }
+
+    //selecteer stemmers en join user.name op de songlist tabel
+    public static function getUsers()
+    {
+        global $con;
+
+        $stmt = $con->prepare("SELECT DISTINCT songlist.user_id, user.name AS songlist_user
+        FROM songlist
+        JOIN user ON songlist.user_id = user.id;");
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
+    //haal user op met zijn stemlijst
+    public static function getUserById($id)
+    {
+        global $con;
+
+        $stmt = $con->prepare("SELECT songlist.*, song.name AS song_name
+        FROM songlist
+        JOIN song ON songlist.song_id = song.id
+        WHERE songlist.user_id = ?
+        ORDER BY songlist.positie;");
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

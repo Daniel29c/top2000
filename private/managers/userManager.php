@@ -21,7 +21,7 @@
         public static function editUser($name, $email, $verify, $isadmin, $id){
             global $con;
 
-            $stmt = $con->prepare("UPDATE user SET`name`=? ,`email`=? ,`passwordhash`=? ,`verify`=? ,`isadmin`=? WHERE id=?");
+            $stmt = $con->prepare("UPDATE user SET`name`=? ,`email`=? ,`verify`=? ,`isadmin`=? WHERE id=?");
             $stmt->bindValue(1, $name);
             $stmt->bindValue(2, $email);
             $stmt->bindValue(3, $verify);
@@ -49,10 +49,19 @@
 
             $stmt->execute();
             
-            return $stmt;
+            return $stmt->fetch(PDO::FETCH_OBJ);
         } 
 
+        //selecteer alle gebruikers 
+        public static function getAllUsers(){
+            global $con;
 
+            $stmt = $con->prepare("SELECT * FROM user");
+            $stmt->execute();
+            
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+            
+        } 
 
 
 
