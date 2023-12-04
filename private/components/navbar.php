@@ -1,8 +1,8 @@
 <?php
 
-  require_once "../private/components/adminnavbar.php";
+  //require_once "../private/components/adminnavbar.php";
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,4 +42,4 @@
   </div>
 </nav>
 </body>
-</html> -->
+</html>
