@@ -15,6 +15,15 @@
             $stmt->bindValue(1 ,$id);
             
         }
+        public function searchSong(){
+            global $con;
+
+            $stmt = $con->prepare("SELECT * FROM song WHERE name LIKE %SearchTerm% OR artist_band_id LIKE %SearchTerm%");
+            $stmt->execute();
+
+            
+
+        }
     }
 
 ?>
