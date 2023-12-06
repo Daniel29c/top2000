@@ -42,7 +42,7 @@
         <a class="nav-link" href="user_admin.php">Gebruiker</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="qr_scanner_admin.php">Qr scanner</a>
+        <a class="nav-link" href="../../public/adminpaginas/node/scanner.php">Qr scanner</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="pdf_admin.php">PDF</a>
