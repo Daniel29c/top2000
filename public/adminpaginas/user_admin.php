@@ -1,9 +1,16 @@
 <?php
 require_once "../../private/admin_autoloader.php";
 
-
-
 $users = userManager::getAllUsers();
+
+
+//remove user als remove id in de search bar zit 
+if(isset($_GET['remove_id'])){
+    $id = $_GET['remove_id'];
+    userManager::removeUser($id);
+    header("location: user_admin.php");
+} 
+
 ?>
 
 <html>
@@ -39,7 +46,7 @@ $users = userManager::getAllUsers();
                             <td>$isadmin</td>
                             <td>
                                 <a class='btn btn-info' href='edit_user.php?id=$user->id'>Edit</a>
-                                <a class='btn btn-danger' href='?remove_id=$user->id'>Delete</a>
+                                <a class='btn btn-danger' href='?remove_id=$user->id' onclick='return confirm(\"Are you sure you want to delete this item?\");'>Delete</a>
                             </td>
                         </tr>
                     ";

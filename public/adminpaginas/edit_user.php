@@ -8,13 +8,16 @@ if (isset($_GET['id'])) {
 if ($_POST) {
     $name = $_POST["name"];
     $email = $_POST["email"];
-    $isAdmin = $_POST["isadmin"];
+    if($_POST["isadmin"] == 'on'){
+        $isAdmin = 1;
+    } else {
+        $isAdmin = 0;
+    }
     $verify = 1;
 
     userManager::editUser($name, $email, $verify, $isAdmin, $user->id);
     header("location: user_admin.php");
 }
-var_dump($user);
 ?>
 
 <html>
