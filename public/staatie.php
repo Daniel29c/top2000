@@ -1,6 +1,11 @@
 <?php
 
 require_once("../private/config.php");
+require_once "../private/managers/staatieManager.php";
+
+if($_POST){
+    StaatieManager::searchSong($_POST["name"], $_POST["artist_band_id"]);
+}
 
 ?>
 <!DOCTYPE html>
@@ -53,7 +58,7 @@ require_once("../private/config.php");
       <input type="text" class="form-control" id="nummer" placeholder="Titel">
     </div>
     <div class="btn group-vertical">
-        <a type="submit" href="staatie_uitslag.php" class="btn btn-danger btn-lg">Staat ie erin?</a>
+        <button type="submit" class="btn btn-danger btn-lg">Staat ie erin?</button>
         <a type="submit" class="btn btn-light btn-lg">Verras me</a>
     </div>
   </form>
