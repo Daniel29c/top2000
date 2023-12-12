@@ -9,9 +9,16 @@
         .navbar{
             background-color:  #DA151A !important;
         }
+        body {
+            font-family: 'VT323', monospace;
+        }
         .bi{
           width: 75px !important;
           height: 75px !important;
+        }
+        nav {
+            font-size: 18px;
+            font-weight: 900;
         }
     </style>
 </head>
@@ -43,9 +50,6 @@
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="user_admin.php">Gebruiker</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="news_admin.php">Nieuws</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="../../public/adminpaginas/node/scanner.php">Qr scanner</a>
