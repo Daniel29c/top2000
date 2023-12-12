@@ -4,7 +4,7 @@ require_once "../../private/admin_autoloader.php";
 //als submit is geklikt voeg artiest toe
 if ($_POST) {
     $name = $_POST["name"];
-    $imgpath = '../img/djs/' . $_FILES["image"]["name"];
+    $imgpath = '../public/img/djs/' . $_FILES["image"]["name"];
     
     move_uploaded_file($_FILES["image"]['tmp_name'], $imgpath);
     djManager::addDj($name, $imgpath);
@@ -33,7 +33,7 @@ if ($_POST) {
                 <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Dj naam</label>
+                <label for="image" class="form-label">Dj foto</label>
                 <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
             </div>
             <button type="submit" class="btn btn-primary">Toevoegen</button>

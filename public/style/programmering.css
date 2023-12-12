@@ -1,0 +1,77 @@
+body {
+    padding: 0%;
+    margin: 0; 
+}
+
+.programmering-head {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 49%, rgba(0, 0, 0, 0.896796218487395) 100%),
+    url("../img/programmering-foto.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.head-text {
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'VT323', monospace;
+    width: 400px; 
+    line-height: 50px;
+}
+
+.part1 {
+    background-color: #DA151A;
+    font-size: 15px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    margin-left: 45px;
+}
+
+.part2 {
+    font-size: 40px;
+}
+
+.part2::before {
+    content: '| ';
+    color: #DA151A;
+}
+
+
+.programmering{
+    margin-top: 20px;
+    width: 1200px;
+    margin: auto;
+}
+
+.dj-image{
+    width: 277.5px;
+    height: 277.5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 1.95px 1.95px 2.6px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+}
+.dj-div{
+    width: 277.5px;
+    height: 393.5px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.time{
+    color: white;
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+    width: 150px;
+    border-radius: 10px;
+    font-family: 'VT323', monospace;
+
+}
+ 

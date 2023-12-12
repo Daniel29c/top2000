@@ -34,7 +34,7 @@
         <a class="nav-link" href="#">Nieuws</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Programmering</a>
+        <a class="nav-link" href="programmering.php">Programmering</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="staatie.php">Staat ie</a>

@@ -2,19 +2,19 @@
     require_once "../../private/admin_autoloader.php";
 
 
-    //id van artiest die wordt bewerkt
+    //id van dj die wordt bewerkt
     $id = $_GET['id'];
 
     $dj = djManager::getDjById($id);
 
-    //als submit is geklikt voeg artiest toe
+    //als submit is geklikt voeg dj toe
     if($_POST){
         $name = $_POST["name"];
         
         if($_FILES["image"]["name"] == null){
             $imgpath = $dj->imgpath;
         } else {
-            $imgpath = '../img/djs/' . $_FILES["image"]["name"];
+            $imgpath = '../public/img/djs/' . $_FILES["image"]["name"];
             move_uploaded_file($_FILES["image"]['tmp_name'], $imgpath);
         }
         

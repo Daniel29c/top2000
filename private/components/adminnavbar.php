@@ -39,7 +39,13 @@
         <a class="nav-link" href="stemmers_lijst_admin.php">Stemmers</a>
       </li>
       <li class="nav-item active">
+        <a class="nav-link" href="program_admin.php">Programma</a>
+      </li>
+      <li class="nav-item active">
         <a class="nav-link" href="user_admin.php">Gebruiker</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="news_admin.php">Nieuws</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="../../public/adminpaginas/node/scanner.php">Qr scanner</a>

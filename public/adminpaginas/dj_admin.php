@@ -39,7 +39,7 @@ if (isset($_GET['remove_id'])) {
                 echo ("
                     <tr>
                     <td>$dj->name</td>
-                    <td><img src='$dj->imgpath' width='100' height='100'></td>
+                    <td><img src='../$dj->imgpath' width='100' height='100'></td>
                     <td>
                         <a class='btn btn-info' href='edit_dj.php?id=$dj->id'>Edit</a>
                         <a class='btn btn-danger' href='?remove_id=$dj->id' onclick='return confirm(\"Are you sure you want to delete this item?\");'>Delete</a>
