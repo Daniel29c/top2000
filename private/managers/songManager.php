@@ -51,4 +51,38 @@ class songManager
 
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
+
+
+    public static function searchSong($search)
+    {
+        global $con;
+
+        $stmt = $con->prepare("SELECT song.*, artist_band.name as artist_band_name
+        FROM song
+        INNER JOIN artist_band ON song.artist_band_id = artist_band.id
+        WHERE song.name LIKE ?;");
+
+        $searchParam = "%$search%";
+        $stmt->bindParam(1, $searchParam);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public static function addSongAndArtist($song, $artist){
+        global $con;
+
+        $stmt = $con->prepare("INSERT INTO `artist_band` (`name`) VALUES(?);");
+        $stmt->bindParam(1, $artist);
+        $stmt->execute();
+
+        $artist_id = $con->lastInsertId();
+
+        $stmt = $con->prepare("INSERT INTO song (`name`,`artist_band_id`) VALUES(?,?);");
+        $stmt->bindParam(1, $song);
+        $stmt->bindParam(2, $artist_id);
+        $stmt->execute();
+
+        return true;
+    }
 }
