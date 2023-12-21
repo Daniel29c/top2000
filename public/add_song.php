@@ -6,7 +6,7 @@
         $artiest = $_POST["artiest"];
         songManager::addSongAndArtist($nummer, $artiest);
 
-        header("location: stemwijzer.php");
+        header("location: stemwijzer1.php");
     }
 
 
@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="container">
-        <a href="stemwijzer.php" class="btn btn-warning mt-3">Terug</a>
+        <a href="stemwijzer1.php" class="btn btn-warning mt-3">Terug</a>
         <h1 class="text-center my-4">Andere nummer toevoegen</h1>
         <form method="POST">
             <div class="form-group">

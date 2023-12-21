@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -26,6 +27,7 @@ body {
 .nummers {
     height: 100%;
     width: 60%;
+    overflow-y: auto;
     margin: 10px; /* Add margin around the nummers section */
 }
 
@@ -38,10 +40,11 @@ form {
 }
 
 .toplijst {
-    height: 100%;
+    height: auto;
     width: 40%;
     background-color: #DA151A;
     color: #FFFFFF;
+    overflow-y: auto;
 }
 
 .stap {
@@ -56,4 +59,8 @@ form {
 
 p {
     margin: 5px;
+}
+
+.btn{
+    color: white !important;
 }

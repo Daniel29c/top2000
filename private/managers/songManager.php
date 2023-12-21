@@ -57,13 +57,14 @@ class songManager
     {
         global $con;
 
-        $stmt = $con->prepare("SELECT song.*, artist_band.name as artist_band_name
+        $stmt = $con->prepare("SELECT song.*, artist_band.name AS artist_band_name
         FROM song
         INNER JOIN artist_band ON song.artist_band_id = artist_band.id
-        WHERE song.name LIKE ?;");
+        WHERE song.name LIKE ? OR artist_band.name LIKE ?;");
 
         $searchParam = "%$search%";
         $stmt->bindParam(1, $searchParam);
+        $stmt->bindParam(2, $searchParam);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -85,4 +86,19 @@ class songManager
 
         return true;
     }
+
+
+    public static function checkEmail($email){
+        global $con; 
+        $stmt = $con->prepare("SELECT * FROM `user` WHERE email=?");
+        $stmt->bindValue(1, $email);
+        $stmt->execute();
+
+        if($stmt->fetchAll(PDO::FETCH_OBJ) == true){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

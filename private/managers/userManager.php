@@ -16,6 +16,18 @@
             $stmt->execute();
         }
 
+        public static function addVotedUser($name ,$email, $gender){
+            global $con;
+
+            $stmt = $con->prepare("INSERT INTO user(`name`,`email`,`gender`) VALUES(?,?,?)");
+            $stmt->bindValue(1, $name);
+            $stmt->bindValue(2, $email);
+            $stmt->bindValue(3, $gender);
+            $stmt->execute();
+
+            return $con	->lastInsertId();
+        }
+
 
         //bewerk de gebruiker zonder het wachtwoord
         public static function editUser($name, $email, $verify, $isadmin, $id){

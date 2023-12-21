@@ -4,13 +4,15 @@ class songlistManager
 {
 
     //voeg "stem" toe tot songlist
-    public static function addSongToList($song_id, $user_id)
+    public static function addSongToList($song_id, $user_id, $position, $motivatie)
     {
         global $con;
 
-        $stmt = $con->prepare("INSERT INTO songlist (`song_id`,`user_id`) VALUES(?,?);");
+        $stmt = $con->prepare("INSERT INTO songlist (`song_id`,`user_id` ,`positie`,`keuzen_motivatie`) VALUES(?,?,?,?);");
         $stmt->bindValue(1, $song_id);
         $stmt->bindValue(2, $user_id);
+        $stmt->bindValue(3, $position);
+        $stmt->bindValue(4, $motivatie);
         $stmt->execute();
     }
 
