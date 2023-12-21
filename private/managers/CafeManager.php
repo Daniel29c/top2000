@@ -17,7 +17,7 @@
         public static function getTicketById($id){
             global $con;
 
-            $stmt = $con->prepare("SELECT * FROM")
+            $stmt = $con->prepare("SELECT * FROM");
         }
     }
 ?>
