@@ -1,0 +1,66 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.stemwijzer-container {
+    width: 50%;
+    margin: auto;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 33%;
+    background-color: antiquewhite;
+    background-image: url("../img/top-2000.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nummer-lijst-container {
+    display: flex;
+    height: 100%;
+}
+
+.nummers {
+    height: 100%;
+    width: 60%;
+    overflow-y: auto;
+    margin: 10px; /* Add margin around the nummers section */
+}
+
+form {
+    margin-bottom: 10px; /* Add margin below the form */
+}
+
+.table {
+    margin-top: 10px; /* Add margin above the table */
+}
+
+.toplijst {
+    height: auto;
+    width: 40%;
+    background-color: #DA151A;
+    color: #FFFFFF;
+    overflow-y: auto;
+}
+
+.stap {
+    background-color: white;
+    color: gray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: 75px;
+    text-align: center;
+}
+
+p {
+    margin: 5px;
+}
+
+.btn{
+    color: white !important;
+}

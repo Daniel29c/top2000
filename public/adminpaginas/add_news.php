@@ -1,41 +1,56 @@
 <?php
-    require_once "../../private/admin_autoloader.php";
-    $imgpath = "public/";
-    if($_POST){
-        var_dump($_POST); 
-        $replaced_Article = str_replace(["\n", "<br />", "<br>", "/n", "\r\n", "\r \n"], "<br />", $_POST["artikel"]);
-        var_dump($replaced_Article);
-        newsarticleManager::addArticle($_POST["title"], $replaced_Article, $imgpath, $_POST["author"]);
-    }
+require_once "../../private/admin_autoloader.php";
+
+//als submit is geklikt voeg artiest toe
+if ($_POST) {
+    $author = $_POST["athor_name"];
+    $Titel = $_POST["news_title"];
+    $tekst = $_POST["news_text"];
+
+    $imgpath = '../public/img/news/' . $_FILES["image"]["name"];
     
-
-    // $artikel = "dit is een lijn\n dit is een nieuwe lijn";
-    // var_dump($artikel);
-
+    move_uploaded_file($_FILES["image"]['tmp_name'], '../' . $imgpath);
+    newsarticleManager::addArticle($tekst, $imgpath, $author, $Titel);
+    header("location: news_admin.php");
+}
 ?>
 
 <html>
+
 <head>
     <?php require_once "../../private/components/head.php" ?>
-    <style>
-        #top-container{
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-around ;
-            
-        }
-    </style>
+
 </head>
+
 <body>
     <?php
-        require_once "../../private/components/adminnavbar.php"; 
+    require_once "../../private/components/adminnavbar.php";
+
     ?>
 
-    <form method="post">
-        <div id="top-container">
-        <div><label for="title">Titel: </label> <input type="text" name="title" required /></div><div><label for="author">Naam author: </label> <input type="text" name="author" required /></div></div>
-        <label for="titel">Artikel: </label><textarea style="height: 400px; width: 300px;" required name="artikel"></textarea>
-        <input type="submit" />
-    </form>
-    
+    <div class="container mt-5">
+        <form method="POST" enctype="multipart/form-data">
+            <h3 class="mb-3">Voeg een nieuws artiekel toe</h3>
+            <div class="mb-3">
+                <label for="name" class="form-label">Autheur naam</label>
+                <input type="text" class="form-control" id="athor_name" name="athor_name" required>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nieuws titel</label>
+                <input type="text" class="form-control" id="news_title" name="news_title" required>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nieuws tekst</label>
+                <textarea rows="4" cols="50" class="form-control" id="news_text" name="news_text" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">nieuws artiekel foto</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Toevoegen</button>
+        </form>
+    </div>
+
+
 </body>
+</html>

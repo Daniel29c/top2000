@@ -24,13 +24,14 @@
         
         
                 //bewerk artiekel
-                public static function editArticle($tekst, $imgpath, $author, $id){
+                public static function editArticle($tekst, $imgpath, $author, $Titel, $id){
                     global $con;
         
-                    $stmt = $con->prepare("UPDATE newsarticle SET`tekst`=? ,`imgpath`=? ,`author`=? WHERE id=?");
+                    $stmt = $con->prepare("UPDATE newsarticle SET`tekst`=? ,`imgpath`=? ,`author`=?, `Titel`=? WHERE id=?");
                     $stmt->bindValue(1, $tekst);
                     $stmt->bindValue(2, $imgpath);
                     $stmt->bindValue(3, $author);
+                    $stmt->bindValue(4, $Titel);
                     $stmt->bindValue(5, $id);
                     $stmt->execute();
                 }
@@ -43,6 +44,15 @@
                     $stmt->bindValue(1, $id);
                     $stmt->execute();
                 }
-    }
 
+                //haal alle artikels op
+                public static function getAllNews(){
+                    global $con;
+        
+                    $stmt = $con->prepare("SELECT * FROM newsarticle");
+                    $stmt->execute();
+
+                    return $stmt->fetchAll(PDO::FETCH_OBJ);
+                }
+            }
 ?>

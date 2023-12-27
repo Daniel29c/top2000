@@ -15,13 +15,25 @@
             $stmt->bindValue(1 ,$id);
             
         }
-        public function searchSong(){
+        public static function searchSong($name, $artist){
             global $con;
 
-            $stmt = $con->prepare("SELECT * FROM song WHERE name LIKE %SearchTerm% OR artist_band_id LIKE %SearchTerm%");
+            $stmt = $con->prepare("SELECT * FROM song WHERE name = ? OR artist_band_id = ?");
+            $stmt->bindValue(1, htmlspecialchars($name));
+            $stmt->bindValue(2, htmlspecialchars($artist));
             $stmt->execute();
-
             
+            $song = $stmt->fetch(PDO::FETCH_OBJ);
+
+            if ($song->num_rows > 0) {
+                $result = "ja";
+            } else {
+                $result = "nee";
+            }
+            // return $stmt->fetch(PDO::FETCH_OBJ);
+            var_dump("test");
+            header("location: staatie_uitslag.php?result=$result");  
+
 
         }
     }
