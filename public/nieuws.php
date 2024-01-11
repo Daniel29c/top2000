@@ -17,6 +17,8 @@ $articles = newsarticleManager::getAllNews();
         .news-container {
             max-width: 80%;
             margin: auto;
+            background: #E6E6E6;
+            margin-top: 4vh;
         }
         .news-item {
             display: flex;
@@ -68,7 +70,6 @@ $articles = newsarticleManager::getAllNews();
         echo '</div>';
     }
 
-    // Close the news items container
     echo '</div>';
     ?>
 </div>
