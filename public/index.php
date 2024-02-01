@@ -1,6 +1,6 @@
 <?php require_once("../private/config.php"); 
 
-$articles = newsarticleManager::getAllNews();
+$articles = newsarticleManager::getAllNewsLimit3();
 
 ?>
 

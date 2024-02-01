@@ -54,5 +54,14 @@
 
                     return $stmt->fetchAll(PDO::FETCH_OBJ);
                 }
+
+                public static function getAllNewsLimit3(){
+                    global $con;
+        
+                    $stmt = $con->prepare("SELECT * FROM newsarticle LIMIT 3");
+                    $stmt->execute();
+
+                    return $stmt->fetchAll(PDO::FETCH_OBJ);
+                }
             }
 ?>
