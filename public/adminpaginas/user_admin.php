@@ -3,20 +3,21 @@ require_once "../../private/admin_autoloader.php";
 
 $users = userManager::getAllUsers();
 
-
 //remove user als remove id in de search bar zit 
-if(isset($_GET['remove_id'])){
+if (isset($_GET['remove_id'])) {
     $id = $_GET['remove_id'];
     userManager::removeUser($id);
     header("location: user_admin.php");
-} 
+}
 
 ?>
 
 <html>
+
 <head>
     <?php require_once "../../private/components/head.php" ?>
 </head>
+
 <body>
     <?php require_once "../../private/components/adminnavbar.php"; ?>
 
@@ -32,16 +33,16 @@ if(isset($_GET['remove_id'])){
         </thead>
         <tbody class="h4 text-center">
             <?php
-                foreach ($users as $user) {
-                    
-                    $isadmin = "nee";
-                    if($user->isadmin == 1){
-                        $isadmin = "ja";
-                    } 
+            foreach ($users as $user) {
 
-                    echo "
+                $isadmin = "nee";
+                if ($user->isadmin == 1) {
+                    $isadmin = "ja";
+                }
+
+                echo "
                         <tr>
-                            <td>$user->name</td>
+                            <td>$user->username</td>
                             <td>$user->email</td>
                             <td>$isadmin</td>
                             <td>
@@ -50,9 +51,10 @@ if(isset($_GET['remove_id'])){
                             </td>
                         </tr>
                     ";
-                }
+            }
             ?>
         </tbody>
     </table>
 </body>
+
 </html>
