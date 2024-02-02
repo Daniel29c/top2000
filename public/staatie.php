@@ -17,7 +17,7 @@ if($_POST){
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url("../img/giphy.gif");
+        background-image: url("img/giphy.gif");
         background-size: 100% 350px;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -27,7 +27,7 @@ if($_POST){
         background-color: #22282E;
     }
     .logo{
-        background-image: url("../img/npo_radio2_top2000_logo.svg");
+        background-image: url("img/npo_radio2_top2000_logo.svg");
         background-repeat: no-repeat;
         background-position: center;
         width: 500px;
