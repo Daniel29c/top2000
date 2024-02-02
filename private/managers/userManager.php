@@ -37,7 +37,7 @@ class userManager
     {
         global $con;
 
-        $stmt = $con->prepare("UPDATE user SET`name`=? ,`email`=? ,`verify`=? ,`isadmin`=? WHERE id=?");
+        $stmt = $con->prepare("UPDATE user SET`username`=? ,`email`=? ,`verify`=? ,`isadmin`=? WHERE id=?");
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $email);
         $stmt->bindValue(3, $verify);

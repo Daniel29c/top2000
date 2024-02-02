@@ -14,8 +14,9 @@
         if($_FILES["image"]["name"] == null){
             $imgpath = $dj->imgpath;
         } else {
-            $imgpath = '../public/img/djs/' . $_FILES["image"]["name"];
-            move_uploaded_file($_FILES["image"]['tmp_name'], $imgpath);
+            $imgmove = '../img/djs/' . $_FILES["image"]["name"];
+            $imgpath = 'img/djs/' . $_FILES["image"]["name"];
+            move_uploaded_file($_FILES["image"]['tmp_name'], $imgmove);
         }
         
         djManager::editDj($id, $name, $imgpath);

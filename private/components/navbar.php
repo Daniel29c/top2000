@@ -43,7 +43,7 @@
                     <a class="nav-link" href="programmering.php">Programmering</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="staatie.php">Staat ie</a>
+                    <a class="nav-link" target="_blank" href="staatie.php">Staat ie</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="cafe.php">Cafe</a>
