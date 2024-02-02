@@ -1,15 +1,17 @@
 <?php
+require_once "../private/autoloader.php";
+//$customer_games = games::get($_GET['id']);
+//$customer = customers::get($_GET['id']);
 
-// $customer_games = games::get($_GET['id']);
-// $customer = customers::get($_GET['id']);
-
-$html = '
+$tickets = ticketManager::getTicketById($_GET["id"]);
+// var_dump("tickets " . $tickets);
+$htmlContent = '
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ratjetoe - Customers</title>
+    <title>Ticket top2000</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,28 +55,29 @@ $html = '
 </head>
 <body>
 <div class="container">
-    <h1>Beste ' . ucfirst($customer['firstname']) . ' ' . $customer['lastname'] . '</h1>
-    <h3>Dit is een test!</h3>
+    <h1>Beste ' . ucfirst($tickets->firstname) . ' ' . $tickets->lastname . '</h1>
+    // <h3>Dit is de tijd wanneer je wordt verwacht in het cafe. Laat deze email zien aan het personeel bij de ingang.</h3>
     <table>
         <thead>
             <tr>
-                <th>Test</th>
-                <th>Test</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Tijdslot</th>
             </tr>
         </thead>
         <tbody>';
 
-        //<td>" . $customer_game['name'] . "</td> 
-        // <td>" . $customer_game['platform'] . "</td>
+//<td>" . $customer_game['name'] . "</td> 
+// <td>" . $customer_game['platform'] . "</td>
 // Add game data to HTML content
-foreach ($customer_games as $customer_game) {
-    $htmlContent .= "
+
+$htmlContent .= "
     <tr>
-    <td>test</td>
-    <td>testssssssssssssssss</td>
+    <td>$tickets->firstname</td>
+    <td>$tickets->lastname</td>
+    <td>$tickets->program_id</td>
     </tr>
     ";
-}
 
 $htmlContent .= '
         </tbody>
@@ -83,6 +86,7 @@ $htmlContent .= '
 </body>
 </html>';
 
-//email::send($_GET['id'], $htmlContent);
+var_dump($htmlContent);
+EmailManager::send($_GET['id'], $htmlContent);
 
-header('location: customer');
+header('location: cafe.php');

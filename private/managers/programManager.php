@@ -36,7 +36,8 @@ class programManager
         $stmt->execute();
     }
 
-    public static function getProgram(){
+    public static function getProgram()
+    {
         global $con;
 
         $stmt = $con->prepare("SELECT program.*, djs.name
@@ -47,7 +48,8 @@ class programManager
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public static function getProgramById($id){
+    public static function getProgramById($id)
+    {
         global $con;
 
         $stmt = $con->prepare("SELECT program.*, djs.name
@@ -59,9 +61,10 @@ class programManager
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function getProgramByDate($startcheck, $endcheck) {
+    public static function getProgramByDate($startcheck, $endcheck)
+    {
         global $con;
-    
+
         $stmt = $con->prepare("SELECT program.*, djs.name AS dj_name, djs.imgpath AS dj_imgpath
         FROM program
         JOIN djs ON program.djs_id = djs.id
@@ -70,8 +73,17 @@ class programManager
         $stmt->bindValue(1, $startcheck . ' 00:00:00');
         $stmt->bindValue(2, $endcheck . ' 00:00:00');
         $stmt->execute();
-    
+
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
-    
+
+    public static function getTimeSlots()
+    {
+        global $con;
+
+        $stmt = $con->prepare("SELECT program.starttime, program.endtime FROM program");
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
 }
