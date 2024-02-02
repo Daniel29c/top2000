@@ -15,8 +15,8 @@ class EmailManager
 {
     public static function send($id, $html)
     {
-        $customer = UserManager::getUserById($id);
-        $tickets = ticketManager::getTicketById($id);
+        //$customer = UserManager::getUserById($id);
+        $tickets = ticketManager::getTicketById(htmlspecialchars($id));
         $settings = config::settings();
         $mail = new PHPMailer(true);
 
@@ -33,7 +33,7 @@ class EmailManager
 
             //Recipients
             $mail->setFrom('student@ictcampus.nl', 'Top2000');
-            $mail->addAddress($customer['firstname'], (ucfirst($tickets['lastname']) . " " . $tickets['program_id']));
+            $mail->addAddress($tickets->email);
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML

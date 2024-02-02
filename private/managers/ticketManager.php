@@ -26,4 +26,14 @@ class ticketManager
 
         return $stmt->fetchObject();
     }
+
+    public static function getAllTickets()
+    {
+        global $con;
+
+        $stmt = $con->prepare("SELECT * FROM top2000_1.tickets JOIN program ON program.id = tickets.program_id");
+        $stmt->execute();
+
+        return $stmt->fetchObject();
+    }
 }

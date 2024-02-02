@@ -5,9 +5,7 @@ require_once("../private/config.php");
 $time = programManager::getProgram();
 
 if ($_POST) {
-    // echo "test";
     $lastId = CafeManager::createTicket($_POST["firstname"], $_POST["lastname"], $_POST["email"], $_POST["gender"], $_POST["program"]);
-    // var_dump("lastID:" . $lastId);
     header("location: cafeEmail.php?id=$lastId");
 }
 // var_dump($_POST);

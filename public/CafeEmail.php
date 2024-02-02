@@ -4,8 +4,10 @@ require_once "../private/autoloader.php";
 //$customer = customers::get($_GET['id']);
 
 $tickets = ticketManager::getTicketById($_GET["id"]);
+$ti = ticketManager::getAllTickets();
 // var_dump("tickets " . $tickets);
-$htmlContent = '
+//var_dump($ti);
+$html = '
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,8 +57,8 @@ $htmlContent = '
 </head>
 <body>
 <div class="container">
-    <h1>Beste ' . ucfirst($tickets->firstname) . ' ' . $tickets->lastname . '</h1>
-    // <h3>Dit is de tijd wanneer je wordt verwacht in het cafe. Laat deze email zien aan het personeel bij de ingang.</h3>
+    <h1>Beste ' . ucfirst($tickets->firstname) . ' ' . $tickets->lastname .  '</h1>
+    <h3>Dit is de tijd wanneer je wordt verwacht in het cafe. Laat deze email zien aan het personeel bij de ingang.</h3>
     <table>
         <thead>
             <tr>
@@ -71,22 +73,23 @@ $htmlContent = '
 // <td>" . $customer_game['platform'] . "</td>
 // Add game data to HTML content
 
-$htmlContent .= "
+$html .= "
     <tr>
     <td>$tickets->firstname</td>
     <td>$tickets->lastname</td>
-    <td>$tickets->program_id</td>
+    <td>$ti->starttime, $ti->endtime</td>
     </tr>
     ";
 
-$htmlContent .= '
+$html .= "
         </tbody>
     </table>
 </div>
+<img src='https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=$tickets->id .'>
 </body>
-</html>';
+</html>";
 
-var_dump($htmlContent);
-EmailManager::send($_GET['id'], $htmlContent);
+// var_dump($html);
+EmailManager::send($_GET['id'], $html);
 
 header('location: cafe.php');
