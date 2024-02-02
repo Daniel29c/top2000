@@ -21,10 +21,10 @@ class StaatieManager
     {
         global $con;
 
-        $stmt = $con->prepare("SELECT song.*, artist_band.name AS artist_name
+        $stmt = $con->prepare("SELECT song.*, artist_band.name AS artist_band_name
             FROM song 
             LEFT JOIN artist_band ON song.artist_band_id = artist_band.id 
-            WHERE song.name LIKE ? OR artist_band.name LIKE ?;"
+            WHERE song.name LIKE ? AND artist_band.name LIKE ? LIMIT 1;"
             );
         $stmt->bindValue(1, htmlspecialchars($name));
         $stmt->bindValue(2, htmlspecialchars($artist));
