@@ -37,7 +37,7 @@ class EmailManager
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Testmail';
+            $mail->Subject = 'Je kaartje voor het Top2000 cafe';
             $mail->Body    = $html;
             $mail->AltBody = 'Kan geen mail sturen';
 
