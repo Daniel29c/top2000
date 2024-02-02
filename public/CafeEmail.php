@@ -5,8 +5,8 @@ require_once "../private/autoloader.php";
 
 $tickets = ticketManager::getTicketById($_GET["id"]);
 $ti = ticketManager::getAllTickets();
-// var_dump("tickets " . $tickets);
-//var_dump($ti);
+// var_dump($tickets);
+// var_dump($ti);
 $html = '
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +77,7 @@ $html .= "
     <tr>
     <td>$tickets->firstname</td>
     <td>$tickets->lastname</td>
-    <td>$ti->starttime, $ti->endtime</td>
+    <td>$tickets->starttime, $tickets->endtime</td>
     </tr>
     ";
 

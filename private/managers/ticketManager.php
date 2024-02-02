@@ -20,7 +20,7 @@ class ticketManager
     {
         global $con;
 
-        $stmt = $con->prepare("SELECT * FROM tickets WHERE id=?");
+        $stmt = $con->prepare("SELECT tickets.*, program.starttime, program.endtime FROM tickets LEFT JOIN program on tickets.program_id = program.id WHERE tickets.id=?");
         $stmt->bindValue(1, htmlspecialchars($id));
         $stmt->execute();
 
