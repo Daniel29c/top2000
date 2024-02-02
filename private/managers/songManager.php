@@ -45,7 +45,9 @@ class songManager
     {
         global $con;
 
-        $stmt = $con->prepare("SELECT * FROM `song` WHERE id=?");
+        $stmt = $con->prepare("SELECT song.*, artist_band.name AS artist_band_name
+        FROM song
+        INNER JOIN artist_band ON song.artist_band_id = artist_band.id WHERE song.id=?");
         $stmt->bindValue(1, $id);
         $stmt->execute();
 

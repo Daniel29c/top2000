@@ -4,7 +4,17 @@ require_once("../private/config.php");
 require_once "../private/managers/staatieManager.php";
 
 if($_POST){
-    StaatieManager::searchSong($_POST["name"], $_POST["artist_band_id"]);
+    $search = StaatieManager::searchSong($_POST["name"], $_POST["artist_band_id"]);
+
+
+
+    if(isset($search)){
+        header("location: staatie_uitslag.php?song=$search");  
+        exit();
+    } else {
+        header("location: staatie_uitslag.php");  
+        exit();
+    }
 }
 
 ?>
@@ -49,20 +59,19 @@ if($_POST){
 <body>
     <!-- <?php require_once "../private/components/navbar.php" ?> -->
     <div class="logo"></div>
-    <div class="login-form">
-  <form method="POST">
+
+
+<form method="POST">
     <div class="form-group">
-      <label for="artiest">Artiest</label>
-      <input type="text" class="form-control" id="artiest" placeholder="Artiest">   
-      <label for="titel">Titel</label>
-      <input type="text" class="form-control" id="nummer" placeholder="Titel">
+        <label for="artiest">Artiest</label>
+        <input type="text" class="form-control" id="artiest" name="artist_band_id" placeholder="Artiest">   
+        <label for="titel">Titel</label>
+        <input type="text" class="form-control" id="nummer" name="name" placeholder="Titel">
     </div>
-    <div class="btn group-vertical">
+    <div class="btn  group-vertical">
         <button type="submit" class="btn btn-danger btn-lg">Staat ie erin?</button>
-        <a type="submit" class="btn btn-light btn-lg">Verras me</a>
     </div>
-  </form>
-</div>
+</form>
     
 </body>
 </html>
