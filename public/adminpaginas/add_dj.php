@@ -4,9 +4,11 @@ require_once "../../private/admin_autoloader.php";
 //als submit is geklikt voeg artiest toe
 if ($_POST) {
     $name = $_POST["name"];
-    $imgpath = '../public/img/djs/' . $_FILES["image"]["name"];
+    $imgmove = '../img/djs/' . $_FILES["image"]["name"];
+    $imgpath = 'img/djs/' . $_FILES["image"]["name"];
     
-    move_uploaded_file($_FILES["image"]['tmp_name'], $imgpath);
+    move_uploaded_file($_FILES["image"]['tmp_name'], $imgmove);
+
     djManager::addDj($name, $imgpath);
     header("location: dj_admin.php");
 }
