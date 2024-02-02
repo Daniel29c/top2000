@@ -47,7 +47,7 @@ class songlistManager
     {
         global $con;
 
-        $stmt = $con->prepare("SELECT DISTINCT songlist.user_id, user.name AS songlist_user
+        $stmt = $con->prepare("SELECT DISTINCT songlist.user_id, user.username AS songlist_user
         FROM songlist
         JOIN user ON songlist.user_id = user.id;");
         $stmt->execute();
