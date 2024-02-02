@@ -33,7 +33,7 @@ if ($_POST) {
         <form method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="<?php echo $user->name; ?>" required>
+                <input type="text" class="form-control" id="name" name="name" value="<?php echo $user->username; ?>" required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>

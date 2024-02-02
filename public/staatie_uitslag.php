@@ -42,6 +42,11 @@ if (isset($_GET["song"])) {
             text-align: center;
             font-size: 50px;
         }
+        
+        .btn-danger {
+            background-color: #DA151A !important;
+        }
+
     </style>
 </head>
 
@@ -58,6 +63,8 @@ if (isset($_GET["song"])) {
             echo "Het nummer/artiest waar u naar zoekt staat niet in de top2000";
         }
         ?>
+        </br>
+        <a style="width: 100px;" href="staatie.php" class="btn btn-danger p-2">Terug</a>
     </div>
 </body>
 
