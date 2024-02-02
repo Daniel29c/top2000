@@ -61,9 +61,6 @@
             <a class="nav-link" href="../../public/adminpaginas/node/scanner.php">Qr scanner</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="pdf_admin.php">PDF</a>
-          </li>
-          <li class="nav-item active">
             <a class="nav-link" href="news_admin.php">Nieuws</a>
           </li>
         </ul>
