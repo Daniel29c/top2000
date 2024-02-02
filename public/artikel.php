@@ -3,7 +3,7 @@
 require_once("../private/config.php");
 $artikel = newsarticleManager::getArticleById($_GET["id"]);
 
-var_dump($artikel);
+// var_dump($artikel);
 
 ?>
 
