@@ -92,4 +92,4 @@ $html .= "
 // var_dump($html);
 EmailManager::send($_GET['id'], $html);
 
-header('location: cafe.php');
+header('location: index.php');
