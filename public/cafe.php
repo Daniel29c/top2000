@@ -18,7 +18,7 @@ if ($_POST) {
     <?php require_once "../private/components/head.php" ?>
     <style>
         .img {
-            background-image: url("../img/cafe.jpg");
+            background-image: url("img/cafe.jpg");
             height: 400px;
             width: 50%;
             padding: 10px;
